@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'company_app/base.html'%}
+{%load bootstrap%}
+{% block title %}Index page{% endblock %}
 
-<h1>{{ object.title }}</h1>
-<p>Date: {{ now|date }}</p>
+{{filter.form|bootstrap}}
 
-
-<h1>Articles</h1>
-<ul>
-{% for product in object_list %}
+{% block content %}
+{% for product in filter.qs %}
+<!--object_list-->
     <li>{{ product.title }} - {{ product.price }}</li>
 {% empty %}
     <li>No products yet.</li>
 {% endfor %}
-</ul>
-
-</body>
-</html>
+{% endblock %}
