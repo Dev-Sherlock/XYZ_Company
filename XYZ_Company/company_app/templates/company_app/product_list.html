@@ -2,12 +2,27 @@
 {%load bootstrap%}
 {% block title %}Index page{% endblock %}
 
-{{filter.form|bootstrap}}
+
 
 {% block content %}
+<form method="GET">
+{{filter.form|bootstrap}}
+<button type="submit" class="btn btn-primary">search</button>
+</form>
+
 {% for product in filter.qs %}
 <!--object_list-->
-    <li>{{ product.title }} - {{ product.price }}</li>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    {% if product.avaliable %}<h6 class="card-subtitle mb-2 text-muted">Avaliable</h6>
+    {% else %}<h6 class="card-subtitle mb-2 text-muted">Out of stock</h6>
+      {% endif %}
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 {% empty %}
     <li>No products yet.</li>
 {% endfor %}

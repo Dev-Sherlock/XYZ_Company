@@ -1,7 +1,8 @@
-import django_filters
+import django_filters as filters
 from .models import *
-class ProductFilter(django_filters.FilterSet):
-
+class ProductFilter(filters.FilterSet):
     class Meta:
         model=Product
-        fields=('title','description','category')
+        fields=['category']
+
+
