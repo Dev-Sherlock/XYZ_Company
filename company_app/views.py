@@ -17,3 +17,5 @@ class ProductListView(ListView):
 
 def main(request):
     return render(request,'company_app/index.html')
+
+

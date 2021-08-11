@@ -5,3 +5,4 @@ urlpatterns = [
     path('', main),
     path('products/', ProductListView.as_view(), name='products'),
 ]
+
