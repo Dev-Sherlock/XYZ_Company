@@ -42,3 +42,9 @@ https://github.com/Dev-Sherlock/XYZ_Company/
 
 
 
+## Important:
+
+This project will not work without .env file, so download this file and put it into project folder.
+
+
+
