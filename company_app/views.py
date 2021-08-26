@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.views.generic.list import ListView
 from .filters import *
-
 from .models import Product
 
 class ProductListView(ListView):
